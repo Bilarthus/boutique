@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doranco Shop</title>
+    <!-- Bootstrap4 CSS + Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('/css/styles.css')}}">
+    {% block stylesheet %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="">Doranco Shop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+         
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href=""> <i class="fa fa-home"></i> Doranco Shop <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Connexion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Inscription</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user"></i>Pseudo
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                    <a class="dropdown-item" href="">Profil</a>
+                    <a class="dropdown-item" href="">Commandes</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="">Déconnexion</a>
+                </div>
+            </li>
+            <!-- Menu admin -->
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-cogs"></i> Gestion de la boutique</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="">Gestion des produits</a>
+                        <a class="dropdown-item" href="">Gestion des membres</a>
+                        <a class="dropdown-item" href="">Gestion des commandes</a>
+                    </div>
+                </li>
+				<li class="nav-item">
+					<a class="nav-link" href="">
+						<i class="fa fa-shopping-cart"></i> Panier
+					</a>
+				</li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0" action="" method="post">
+            <input class="form-control mr-sm-2" type="text" placeholder="rechercher" aria-label="rechercher" name="term" value="">
+            <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Rechercher" name="rechercher">
+          </form>
+        </div>
+      </nav>
+    <div class="container main-container">
+	
+	<!-- CONTENU -->
+
+    {% block content %}
+
+    {% endblock %}
+	
+	
+    </div>
+    <footer class="bg-dark text-center py-3 text-light">
+         Doranco Shop - DorancoTeam - powered by Bootstrap
+    </footer>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src=""></script>
+    {% block javascrip %}{% endblock %}
+</body>
+</html>

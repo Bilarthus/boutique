@@ -1,0 +1,7 @@
+body{
+    margin-top: 80px;
+}
+
+.main-container{
+    min-height: calc(100vh - 136px);
+}
