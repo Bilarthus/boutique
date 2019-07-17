@@ -21,23 +21,23 @@
          
             <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href=""> <i class="fa fa-home"></i> Doranco Shop <span class="sr-only"></span></a>
+              <a class="nav-link" href="{{ path('homepage')}}"> <i class="fa fa-home"></i> Doranco Shop <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Connexion</a>
+              <a class="nav-link" href="{{ path('connexion')}}">Connexion</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">Inscription</a>
+                <a class="nav-link" href="{{ path('inscription')}}">Inscription</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user"></i>Pseudo
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                    <a class="dropdown-item" href="">Profil</a>
+                    <a class="dropdown-item" href="{{ path('profil') }}">Profil</a>
                     <a class="dropdown-item" href="">Commandes</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="">Déconnexion</a>
+                    <a class="dropdown-item" href="{{ path('deconnexion')}}">Déconnexion</a>
                 </div>
             </li>
             <!-- Menu admin -->
@@ -45,7 +45,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-cogs"></i> Gestion de la boutique</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <a class="dropdown-item" href="">Gestion des produits</a>
+                        <a class="dropdown-item" href="{{ path('admin_produit')}}">Gestion des produits</a>
                         <a class="dropdown-item" href="">Gestion des membres</a>
                         <a class="dropdown-item" href="">Gestion des commandes</a>
                     </div>
@@ -63,9 +63,17 @@
         </div>
       </nav>
     <div class="container main-container">
-	
-	<!-- CONTENU -->
+    {# Boucle pour afficher les messages d'erreur #}
+    {% for message in app.flashes('errors') %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endfor %}
 
+    {# Boucle pour afficher les messages de succès #}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+	
+    {# Bdéclaration du bloc de contenu principal #}
     {% block content %}
 
     {% endblock %}

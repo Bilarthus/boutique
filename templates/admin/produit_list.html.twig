@@ -1,6 +1,9 @@
-{% for message in app.flashes('success') %}
-    {{ message }} <br/>
+{% extends 'layout.html.twig' %}
+{% block title %} Gestion des produits {% endblock %}
 
-{% endfor %}
+{% block content %}
+
 
 Je suis dans la page d'admine qui liste les produits
+
+{% endblock %}
